@@ -1,10 +1,10 @@
-# NEXURA
+# RAILO
 
 Uma landing page moderna para uma plataforma **HR-Tech Marketplace**, conectando empresas aos melhores profissionais de Recursos Humanos de forma simples, rápida e segura.
 
 ## Sobre
 
-A NEXURA foi desenvolvida com foco em uma experiência moderna, responsiva e intuitiva, apresentando os principais recursos da plataforma através de uma interface limpa e elegante.
+A RAILO foi desenvolvida com foco em uma experiência moderna, responsiva e intuitiva, apresentando os principais recursos da plataforma através de uma interface limpa e elegante.
 
 ## Funcionalidades
 
@@ -44,7 +44,7 @@ git clone https://github.com/seu-usuario/nexura.git
 Entre na pasta:
 
 ```bash
-cd nexura
+cd railo
 ```
 
 Abra o arquivo `index.html` no navegador.
