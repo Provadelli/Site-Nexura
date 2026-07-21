@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="RAILO - HR-Tech Marketplace. Conecte empresas aos melhores profissionais de RH com segurança, escrow e contratos digitais." />
+<meta name="description" content="RAILO - Meu Perfil. Gerencie sua conta, foto e informações profissionais." />
 <meta name="theme-color" content="#0057FF" />
-<title>RAILO — HR-Tech Marketplace</title>
+<title>Meu Perfil — RAILO</title>
 <script>
 (function(){
   try{
@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
+
 /* =========================================================
    NEXURA — Design System
    ========================================================= */
@@ -456,6 +457,83 @@ html[data-theme="dark"] .diff-card .ic,
 html[data-theme="dark"] .loader{
   transition:background-color .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease;
 }
+
+/* =========================================================
+   RAILO — Página de Perfil (estilos adicionais)
+   ========================================================= */
+.profile-hero{padding:150px 0 40px;background:var(--gradient-hero)}
+.profile-banner{
+  background:var(--surface);border:1px solid var(--gray-200);border-radius:var(--radius-xl);
+  padding:32px;box-shadow:var(--shadow);display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+}
+.avatar-upload{position:relative;width:96px;height:96px;flex-shrink:0}
+.avatar-upload .avatar-img{
+  width:96px;height:96px;border-radius:50%;background:var(--gradient-blue);color:#fff;
+  display:grid;place-items:center;font-size:32px;font-weight:800;overflow:hidden;box-shadow:var(--shadow);
+}
+.avatar-upload .avatar-img img{width:100%;height:100%;object-fit:cover}
+.avatar-upload .avatar-edit{
+  position:absolute;bottom:0;right:0;width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;
+  display:grid;place-items:center;border:3px solid var(--surface);box-shadow:var(--shadow-sm);
+}
+.avatar-upload .avatar-edit svg{width:15px;height:15px}
+.avatar-upload input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:96px;height:96px;border-radius:50%}
+.profile-name-block{flex:1;min-width:200px}
+.profile-name-block h1{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.02em}
+.profile-name-block .role-pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:999px;margin-top:8px;background:var(--blue-50);color:var(--blue)}
+.profile-name-block .role-pill.rh{background:var(--orange-50);color:var(--orange)}
+.profile-name-block .email{color:var(--gray-600);font-size:14px;margin-top:6px}
+.profile-actions{margin-left:auto;display:flex;gap:10px}
+
+.profile-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:start;margin-top:28px}
+.profile-card{background:var(--surface);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-sm)}
+.profile-card h3{font-size:17px;font-weight:800;margin-bottom:4px}
+.profile-card .card-sub{font-size:13.5px;color:var(--gray-600);margin-bottom:20px}
+.profile-card + .profile-card{margin-top:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-field{margin-bottom:14px}
+.form-field.full{grid-column:1/-1}
+.form-field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+.form-field input,.form-field select,.form-field textarea{
+  width:100%;padding:12px 14px;border:1px solid var(--gray-200);border-radius:12px;font-size:14px;
+  font-family:inherit;background:var(--gray-50);color:var(--ink);transition:border-color .2s,background .35s,color .35s;
+}
+.form-field textarea{resize:vertical;min-height:96px}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--blue);outline:none;background:var(--surface)}
+.form-field input:disabled{opacity:.6;cursor:not-allowed}
+
+.avail-toggle{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--gray-50);border-radius:12px;border:1px solid var(--gray-200)}
+.avail-toggle span{font-size:14px;font-weight:600}
+.switch{position:relative;width:46px;height:26px;flex-shrink:0}
+.switch input{opacity:0;width:0;height:0}
+.switch .slider{position:absolute;inset:0;background:var(--gray-200);border-radius:999px;transition:.2s;cursor:pointer}
+.switch .slider::before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.switch input:checked + .slider{background:#22C55E}
+.switch input:checked + .slider::before{transform:translateX(20px)}
+
+.security-step{border:1px solid var(--gray-200);border-radius:14px;padding:18px;margin-bottom:14px;background:var(--gray-50)}
+.security-step h4{font-size:14px;font-weight:700;margin-bottom:4px}
+.security-step p{font-size:13px;color:var(--gray-600);margin-bottom:0}
+.code-boxes{display:flex;gap:8px;margin:14px 0}
+.code-boxes input{
+  width:44px;height:52px;text-align:center;font-size:20px;font-weight:800;border-radius:10px;
+  border:1px solid var(--gray-200);background:var(--surface);color:var(--ink);
+}
+.code-boxes input:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px rgba(0,87,255,.15)}
+.demo-note{font-size:12px;color:var(--gray-400);background:var(--blue-50);color:var(--blue);padding:10px 12px;border-radius:10px;margin-top:8px}
+
+.logout-card{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logout-card p{font-size:13.5px;color:var(--gray-600);margin:0}
+
+@media (max-width:900px){
+  .profile-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .profile-actions{margin-left:0;width:100%}
+}
+@media (max-width:600px){
+  .profile-banner{flex-direction:column;text-align:center}
+  .profile-actions{justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -466,24 +544,23 @@ html[data-theme="dark"] .loader{
 <!-- Header -->
 <header class="header" id="header">
   <div class="container nav">
-    <a href="#" class="logo" aria-label="RAILO início">
+    <a href="index.html" class="logo" aria-label="RAILO início">
       <img src="railoR.png" alt="Logo RAILO" width="32" height="32" class="logo-mark" >
       <span style=" var(--ink)">RAIL<span style="color: var(--orange)">O</span></span>
-    </a> 
+    </a>
     <nav class="nav-menu" aria-label="Menu principal">
-      <a href="#how" class="nav-link">Como Funciona</a>
-      <a href="#marketplace" class="nav-link">Marketplace</a>
-      <a href="#diff" class="nav-link">Diferenciais</a>
-      <a href="#plans" class="nav-link">Planos</a>
-      <a href="#faq" class="nav-link">FAQ</a>
-      <a href="#contact" class="nav-link">Contato</a>
+      <a href="index.html#how" class="nav-link">Como Funciona</a>
+      <a href="index.html#marketplace" class="nav-link">Marketplace</a>
+      <a href="index.html#diff" class="nav-link">Diferenciais</a>
+      <a href="index.html#plans" class="nav-link">Planos</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
     </nav>
     <div class="nav-actions">
       <span class="auth-guest-actions">
         <button class="btn btn-ghost" data-modal="login">Login</button>
         <button class="btn btn-primary" data-modal="signup">Começar Agora</button>
       </span>
-      <a href="perfil.html" class="user-avatar-link" id="userAvatarLink" aria-label="Meu perfil"></a>
+      <a href="perfil.html" class="user-avatar-link show" id="userAvatarLink" aria-label="Meu perfil"></a>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro" aria-pressed="false">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7.2 7.2 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -500,274 +577,136 @@ html[data-theme="dark"] .loader{
   <div class="drawer-backdrop" data-close-drawer></div>
   <div class="drawer-panel">
     <div class="drawer-head">
-      <span class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18V6l8 8 8-8v12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>NEXURA</span>
+      <span class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18V6l8 8 8-8v12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>RAILO</span>
       <button class="drawer-close" data-close-drawer aria-label="Fechar menu">
         <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>
-    <a href="#how" data-close-drawer>Como Funciona</a>
-    <a href="#marketplace" data-close-drawer>Marketplace</a>
-    <a href="#diff" data-close-drawer>Diferenciais</a>
-    <a href="#plans" data-close-drawer>Planos</a>
-    <a href="#faq" data-close-drawer>FAQ</a>
-    <a href="#contact" data-close-drawer>Contato</a>
+    <a href="index.html#how" data-close-drawer>Como Funciona</a>
+    <a href="index.html#marketplace" data-close-drawer>Marketplace</a>
+    <a href="index.html#diff" data-close-drawer>Diferenciais</a>
+    <a href="index.html#plans" data-close-drawer>Planos</a>
+    <a href="index.html#faq" data-close-drawer>FAQ</a>
     <div class="drawer-actions auth-guest-actions" style="flex-direction:column">
       <button class="btn btn-ghost btn-block" data-modal="login">Login</button>
       <button class="btn btn-primary btn-block" data-modal="signup">Começar Agora</button>
     </div>
-    <a href="perfil.html" class="btn btn-dark btn-block user-avatar-link" id="userAvatarLinkMobile" style="display:none;border-radius:999px;margin-top:14px;justify-content:center">Meu Perfil</a>
   </div>
 </div>
 
 <main>
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="hero-text reveal">
-        <span class="eyebrow">HR-Tech Marketplace</span>
-        <h1>O <span class="grad">marketplace de RH</span> que conecta talentos e empresas com segurança.</h1>
-        <p class="lead">RAILO une empresas a profissionais de RH verificados, com pagamentos em escrow, contratos digitais e auditoria completa — tudo em uma plataforma minimalista e segura.</p>
-        <div class="hero-cta">
-          <button class="btn btn-primary btn-lg" data-modal="signup" data-role="empresa">Sou Empresa</button>
-          <button class="btn btn-ghost btn-lg" data-modal="signup" data-role="profissional">Sou Profissional RH</button>
-        </div>
-        <div class="hero-trust">
-          <div class="avatars" aria-hidden="true">
-            <span class="av" style="background:#0057FF">A</span>
-            <span class="av" style="background:#FF7A00">M</span>
-            <span class="av" style="background:#22C55E">R</span>
-            <span class="av" style="background:#8B5CF6">J</span>
+  <!-- Profile Hero -->
+  <section class="profile-hero">
+    <div class="container">
+      <div class="profile-banner reveal in">
+        <div class="avatar-upload">
+          <div class="avatar-img" id="avatarImg">U</div>
+          <div class="avatar-edit" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 13.5V17h3.5L18 6.5 14.5 3 4 13.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
           </div>
-          <span><span class="stars">★★★★★</span> 4.9/5 · +12.000 profissionais ativos</span>
+          <input type="file" id="avatarInput" accept="image/*" aria-label="Alterar foto de perfil" />
+        </div>
+        <div class="profile-name-block">
+          <h1 id="profileName">Carregando...</h1>
+          <span class="role-pill" id="profileRolePill">Conta</span>
+          <div class="email" id="profileEmail"></div>
+        </div>
+        <div class="profile-actions">
+          <button class="btn btn-ghost" id="logoutBtn">Sair da conta</button>
         </div>
       </div>
 
-      <!-- Animated dashboard mock -->
-      <div class="mock reveal" aria-hidden="true">
-        <div class="mock-card mock-main">
-          <div class="mc-head"><span class="dot" style="background:#22C55E"></span><span class="mc-title">Contratações este mês</span></div>
-          <div class="mc-val">1.284</div>
-          <div class="mc-foot">+18% vs. mês anterior</div>
-          <div class="mock-chart">
-            <div class="bar" style="height:40%"></div>
-            <div class="bar" style="height:65%"></div>
-            <div class="bar" style="height:50%"></div>
-            <div class="bar" style="height:80%"></div>
-            <div class="bar" style="height:60%"></div>
-            <div class="bar" style="height:95%"></div>
-            <div class="bar" style="height:72%"></div>
+      <div class="profile-grid">
+        <!-- Left column -->
+        <div>
+          <div class="profile-card reveal in">
+            <h3>Informações do perfil</h3>
+            <p class="card-sub">Essas informações ajudam empresas e profissionais a te conhecer melhor.</p>
+            <form id="profileForm">
+              <div class="form-grid">
+                <div class="form-field"><label for="pf-nome">Nome Completo</label><input id="pf-nome" type="text" required /></div>
+                <div class="form-field"><label for="pf-email">E-mail</label><input id="pf-email" type="email" disabled /></div>
+              </div>
+
+              <div id="pfRhFields" style="display:none">
+                <div class="form-grid">
+                  <div class="form-field"><label for="pf-spec">Área de Especialidade</label>
+                    <select id="pf-spec">
+                      <option value="recrutamento">Recrutamento &amp; Seleção</option>
+                      <option value="dp">Departamento Pessoal</option>
+                      <option value="treinamento">Treinamento &amp; Desenvolvimento</option>
+                      <option value="estrategico">RH Estratégico</option>
+                    </select>
+                  </div>
+                  <div class="form-field"><label for="pf-senioridade">Grau de Experiência</label>
+                    <select id="pf-senioridade">
+                      <option value="Júnior">Júnior</option>
+                      <option value="Pleno">Pleno</option>
+                      <option value="Sênior">Sênior</option>
+                      <option value="Especialista">Especialista</option>
+                    </select>
+                  </div>
+                  <div class="form-field"><label for="pf-anos">Anos de Experiência</label><input id="pf-anos" type="number" min="0" max="50" /></div>
+                  <div class="form-field"><label for="pf-preco">Valor por Hora (R$)</label><input id="pf-preco" type="number" min="0" /></div>
+                </div>
+                <div class="form-field full avail-toggle" style="margin-bottom:14px">
+                  <span>Disponível para novos projetos agora</span>
+                  <label class="switch"><input type="checkbox" id="pf-disponivel" /><span class="slider"></span></label>
+                </div>
+              </div>
+
+              <div class="form-field full">
+                <label for="pf-bio">Sobre mim</label>
+                <textarea id="pf-bio" placeholder="Conte um pouco sobre sua trajetória, experiência e o que te diferencia..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg">Salvar alterações</button>
+            </form>
           </div>
         </div>
-        <div class="mock-card mock-1">
-          <div class="mc-head"><span class="dot" style="background:#0057FF"></span><span class="mc-title">Escrow ativo</span></div>
-          <div class="mc-val">R$ 2,4M</div>
-          <div class="mc-foot">Protegidos em contratos</div>
-        </div>
-        <div class="mock-card mock-2">
-          <div class="mock-badge">Novo match</div>
-          <div class="mc-head"><span class="dot" style="background:#FF7A00"></span><span class="mc-title">Profissional top</span></div>
-          <div class="mc-val">98%</div>
-          <div class="mc-foot">Compatibilidade</div>
-        </div>
-        <div class="mock-card mock-3">
-          <div class="mc-head"><span class="dot" style="background:#8B5CF6"></span><span class="mc-title">Tempo médio</span></div>
-          <div class="mc-val">3,2 dias</div>
-          <div class="mc-foot">Para fechar contrato</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Stats -->
-  <div class="container">
-    <div class="stats reveal" role="region" aria-label="Estatísticas da plataforma">
-      <div class="stats-grid">
-        <div class="stat"><div class="num" data-count="12000">0</div><div class="lbl">Profissionais verificados</div></div>
-        <div class="stat"><div class="num" data-count="850">0<span class="suf">+</span></div><div class="lbl">Empresas contratantes</div></div>
-        <div class="stat"><div class="num" data-count="98">0<span class="suf">%</span></div><div class="lbl">Satisfação dos clientes</div></div>
-        <div class="stat"><div class="num" data-count="24">0<span class="suf">/7</span></div><div class="lbl">Suporte e auditoria</div></div>
-      </div>
-    </div>
-  </div>
+        <!-- Right column -->
+        <div>
+          <div class="profile-card reveal in">
+            <h3>Segurança</h3>
+            <p class="card-sub">Por segurança, alterar a senha exige verificação do e-mail cadastrado.</p>
 
-  <!-- How it works -->
-  <section class="section" id="how">
-    <div class="container center">
-      <span class="eyebrow">Como Funciona</span>
-      <h2 class="h-title">Do briefing ao contrato em poucos passos</h2>
-      <p class="h-sub">Fluxos desenhados para empresas e profissionais, com transparência em cada etapa.</p>
-      <div class="tabs" role="tablist" aria-label="Fluxo">
-        <button class="tab active" role="tab" aria-selected="true" data-tab="empresa">Para Empresas</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="profissional">Para Profissionais</button>
-      </div>
-    </div>
+            <div id="securityIdle">
+              <button class="btn btn-ghost btn-block" id="startVerifyBtn">Alterar senha</button>
+            </div>
 
-    <div class="container">
-      <div class="flow-panel active" id="flow-empresa">
-        <div class="flow">
-          <div class="step reveal"><span class="n">01</span><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h4>Crie seu briefing</h4><p>Descreva a vaga, escopo ou projeto de RH em minutos com templates guiados.</p></div>
-          <div class="step reveal"><span class="n">02</span><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4-8 4-8-4 8-4zM4 13l8 4 8-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Receba matches</h4><p>Algoritmo curado sugere profissionais por senioridade, nota e disponibilidade.</p></div>
-          <div class="step reveal"><span class="n">03</span><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Contrate com escrow</h4><p>O pagamento fica protegido e só é liberado conforme os marcos do contrato.</p></div>
-          <div class="step reveal"><span class="n">04</span><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Acompanhe e audite</h4><p>Painel com relatórios, assinaturas digitais e trilha completa de auditoria.</p></div>
-        </div>
-      </div>
-      <div class="flow-panel" id="flow-profissional">
-        <div class="flow">
-          <div class="step reveal"><span class="n">01</span><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM6 20a6 6 0 0112 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h4>Monte seu perfil</h4><p>Adicione especialidades, portfólio, senioridade e disponibilidade sem complicação.</p></div>
-          <div class="step reveal"><span class="n">02</span><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 10-12 0v3.2c0 .5-.2 1-.6 1.4L4 17h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Receba propostas</h4><p>Empresas te encontram pelo marketplace e você recebe convites alinhados ao seu perfil.</p></div>
-          <div class="step reveal"><span class="n">03</span><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Assine e execute</h4><p>Contrato digital com cláusulas claras e marcos. Tudo com validade jurídica.</p></div>
-          <div class="step reveal"><span class="n">04</span><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Receba com segurança</h4><p>Pagamento garantido em escrow, liberado automaticamente ao concluir cada marco.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div id="securityVerify" style="display:none">
+              <div class="security-step">
+                <h4>Passo 1 — Verifique seu e-mail</h4>
+                <p>Enviamos um código de 6 dígitos para <b id="verifyEmailLabel"></b>.</p>
+                <div class="demo-note" id="demoCodeNote"></div>
+              </div>
+              <div class="form-field full">
+                <label>Código de verificação</label>
+                <div class="code-boxes" id="codeBoxes">
+                  <input maxlength="1" inputmode="numeric" />
+                  <input maxlength="1" inputmode="numeric" />
+                  <input maxlength="1" inputmode="numeric" />
+                  <input maxlength="1" inputmode="numeric" />
+                  <input maxlength="1" inputmode="numeric" />
+                  <input maxlength="1" inputmode="numeric" />
+                </div>
+              </div>
+              <div class="form-field full"><label for="pf-newpass">Nova senha</label><input id="pf-newpass" type="password" minlength="6" placeholder="Mínimo 6 caracteres" /></div>
+              <div class="form-field full"><label for="pf-newpass2">Confirmar nova senha</label><input id="pf-newpass2" type="password" placeholder="Repita a nova senha" /></div>
+              <div style="display:flex;gap:10px">
+                <button class="btn btn-primary" id="confirmChangePassBtn" style="flex:1">Confirmar alteração</button>
+                <button class="btn btn-ghost" id="cancelVerifyBtn">Cancelar</button>
+              </div>
+            </div>
+          </div>
 
-  <!-- Marketplace -->
-  <section class="section" id="marketplace" style="background:var(--gray-50)">
-    <div class="container center">
-      <span class="eyebrow">Marketplace</span>
-      <h2 class="h-title">Profissionais de RH prontos para começar</h2>
-      <p class="h-sub">Todos verificados, com histórico de avaliações e disponibilidade em tempo real.</p>
-    </div>
-    <div class="container">
-      <div class="market-filters" role="tablist" aria-label="Filtros">
-        <button class="chip active" data-filter="all">Todos</button>
-        <button class="chip" data-filter="recrutamento">Recrutamento</button>
-        <button class="chip" data-filter="dp">Departamento Pessoal</button>
-        <button class="chip" data-filter="treinamento">T&D</button>
-        <button class="chip" data-filter="estrategico">RH Estratégico</button>
-      </div>
-      <div class="cards-grid" id="proGrid" aria-live="polite"></div>
-      <div style="text-align:center;margin-top:36px">
-        <button class="btn btn-dark btn-lg" data-modal="signup">Ver todos os profissionais</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Differentials -->
-  <section class="section" id="diff">
-    <div class="container center">
-      <span class="eyebrow">Diferenciais</span>
-      <h2 class="h-title">Por que a RAILO é diferente</h2>
-      <p class="h-sub">Comparativo direto com plataformas tradicionais de freelancers e consultorias.</p>
-    </div>
-    <div class="container diff-grid">
-      <div class="diff-card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h4>Verificação rigorosa</h4><p>Cada profissional passa por validação de identidade, experiência e referências antes de entrar no marketplace.</p></div>
-      <div class="diff-card featured reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Pagamento em escrow</h4><p>Valor protegido desde o início. Liberado por marco, com seguro de transação incluso.</p></div>
-      <div class="diff-card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h4>Match em tempo real</h4><p>Algoritmo que considera senioridade, nota, tempo de resposta e disponibilidade atual.</p></div>
-      <div class="diff-card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Contratos com validade jurídica</h4><p>Assinatura digital ICP-Brasil, cláusulas padrão e personalização por projeto.</p></div>
-      <div class="diff-card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4zM4 9h16M9 9v11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Painel de auditoria</h4><p>Trilha completa de eventos, relatórios exportáveis e logs imutáveis para compliance.</p></div>
-      <div class="diff-card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 100-6 3 3 0 000 6zM19 12a7 7 0 01-.1 1l2 1.5-2 3.5-2.4-1a7 7 0 01-1.7 1l-.4 2.5h-4l-.4-2.5a7 7 0 01-1.7-1l-2.4 1-2-3.5 2-1.5a7 7 0 010-2l-2-1.5 2-3.5 2.4 1a7 7 0 011.7-1L9 3h4l.4 2.5a7 7 0 011.7 1l2.4-1 2 3.5-2 1.5c.1.3.1.7.1 1z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Suporte humano 24/7</h4><p>Time especializado em RH-Tech para mediação, dúvidas e resolução de disputas.</p></div>
-    </div>
-  </section>
-
-  <!-- Security -->
-  <section class="section" id="security" style="background:var(--gray-50)">
-    <div class="container center">
-      <span class="eyebrow orange">Segurança & Confiança</span>
-      <h2 class="h-title">Proteção em cada camada da transação</h2>
-      <p class="h-sub">Infraestrutura enterprise com criptografia ponta a ponta e conformidade LGPD.</p>
-    </div>
-    <div class="container sec-grid">
-      <div class="sec-card reveal"><div class="sec-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h4>Escrow protegido</h4><p>Valor retido em conta segregada e liberado por marcos aprovados.</p></div>
-      <div class="sec-card reveal"><div class="sec-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4zM9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Seguro de transação</h4><p>Cobertura contra não entrega e disputas em todos os contratos elegíveis.</p></div>
-      <div class="sec-card reveal"><div class="sec-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2a7 7 0 00-7 7v3a5 5 0 005 5h4a5 5 0 005-5V9a7 7 0 00-7-7zM9 22h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h4>Conformidade LGPD</h4><p>Coleta mínima, consentimento explícito e direito ao esquecimento garantido.</p></div>
-      <div class="sec-card reveal"><div class="sec-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Assinatura digital</h4><p>Assinaturas com validade jurídica ICP-Brasil e hash criptográfico.</p></div>
-      <div class="sec-card reveal"><div class="sec-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5zM14 3v5h5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h4>Contratos inteligentes</h4><p>Modelos auditáveis com cláusulas automáticas e versionamento completo.</p></div>
-      <div class="sec-card reveal"><div class="sec-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4zM8 12h8M8 8h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Auditoria contínua</h4><p>Logs imutáveis, exportação de relatórios e trilha de evidências.</p></div>
-      <div class="sec-card reveal"><div class="sec-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 100-6 3 3 0 000 6zM19 12a7 7 0 01-.1 1l2 1.5-2 3.5-2.4-1a7 7 0 01-1.7 1l-.4 2.5h-4l-.4-2.5a7 7 0 01-1.7-1l-2.4 1-2-3.5 2-1.5a7 7 0 010-2l-2-1.5 2-3.5 2.4 1a7 7 0 011.7-1L9 3h4l.4 2.5a7 7 0 011.7 1l2.4-1 2 3.5-2 1.5c.1.3.1.7.1 1z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Criptografia E2E</h4><p>Dados em repouso e trânsito com AES-256 e TLS 1.3 em toda a plataforma.</p></div>
-    </div>
-  </section>
-
-  <!-- Plans -->
-  <section class="section plans" id="plans">
-    <div class="container center">
-      <span class="eyebrow">Planos</span>
-      <h2 class="h-title">Escolha o plano ideal para sua operação</h2>
-      <p class="h-sub">Transparência total, sem taxas escondidas. Cancele quando quiser.</p>
-    </div>
-    <div class="container plans-grid">
-      <div class="plan reveal">
-        <h3>Starter</h3>
-        <p class="desc">Para empresas começando a contratar RH freelance.</p>
-        <div class="price">R$ 0 <small>/mês</small></div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Até 3 contratos/mês</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Marketplace completo</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Escrow básico</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Suporte por e-mail</li>
-        </ul>
-        <button class="btn btn-ghost btn-block" data-modal="signup">Começar grátis</button>
-      </div>
-      <div class="plan featured reveal">
-        <h3>Professional</h3>
-        <p class="desc">Para times de RH que escalam contratações e projetos.</p>
-        <div class="price">R$ 349 <small>/mês</small></div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Contratos ilimitados</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Match prioritário por IA</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Escrow + seguro de transação</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Auditoria e relatórios</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Suporte prioritário 24/7</li>
-        </ul>
-        <button class="btn btn-primary btn-block" data-modal="signup">Assinar Professional</button>
-      </div>
-      <div class="plan reveal">
-        <h3>Enterprise</h3>
-        <p class="desc">Para grandes organizações com governança e SSO.</p>
-        <div class="price">Sob consulta</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Tudo do Professional</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> SSO/SAML e SCIM</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> SLA dedicado e CSM</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Integrações via API</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Revisão jurídica dedicada</li>
-        </ul>
-        <button class="btn btn-dark btn-block" data-modal="signup">Falar com vendas</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="section" id="testimonials">
-    <div class="container center">
-      <span class="eyebrow">Depoimentos</span>
-      <h2 class="h-title">Quem usa, recomenda</h2>
-      <p class="h-sub">Histórias reais de empresas e profissionais que cresceram com a RAILO.</p>
-    </div>
-    <div class="container tst-grid">
-      <div class="tst reveal"><div class="stars">★★★★★</div><p>"Reduzimos o tempo de contratação de especialistas em RH de 3 semanas para 4 dias. O escrow deu segurança total ao financeiro."</p><div class="tst-user"><div class="ph">AC</div><div><b>Ana Carvalho</b><span>Head de People · TechNova</span></div></div></div>
-      <div class="tst reveal"><div class="stars">★★★★★</div><p>"Como consultora de RH, finalmente tenho previsibilidade de receita e contratos com validade jurídica. A NEXURA mudou meu negócio."</p><div class="tst-user"><div class="ph">RM</div><div><b>Rafael Moura</b><span>Consultor RH Estratégico</span></div></div></div>
-      <div class="tst reveal"><div class="stars">★★★★★</div><p>"A auditoria e os relatórios exportáveis salvaram nossa conformidade. Painel limpo, fácil de adotar pelo time inteiro."</p><div class="tst-user"><div class="ph">JS</div><div><b>Juliana Souza</b><span>Diretora de RH · Grupo Vega</span></div></div></div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="container center">
-      <span class="eyebrow">FAQ</span>
-      <h2 class="h-title">Perguntas frequentes</h2>
-    </div>
-    <div class="container">
-      <div class="faq-list" id="faqList">
-        <div class="faq-item"><button class="faq-q" aria-expanded="false">Como funciona o escrow da RAILO?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">O valor do contrato é depositado em uma conta segregada e só é liberado ao profissional conforme os marcos são aprovados pela empresa. Em caso de disputa, nosso time de mediação atua em até 48h.</div></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false">Os profissionais são verificados?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">Sim. Validamos identidade, experiência, referências e certificações. Profissionais com selo "Verificado" passaram por todo o processo de due diligence.</div></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false">Posso cancelar a qualquer momento?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">Sim. Todos os planos são mensais e sem fidelidade. Você pode cancelar ou trocar de plano direto pelo painel, sem multa.</div></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false">A plataforma é compatível com a LGPD?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">Totalmente. Aplicamos minimização de dados, consentimento explícito, criptografia e direito ao esquecimento. Temos DPO dedicado e relatórios de privacidade.</div></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false">Existe integração via API?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">No plano Enterprise oferecemos API REST, webhooks, SSO/SAML e SCIM para integrar com seu ATS, ERP e sistemas de identidade.</div></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="cta-final reveal">
-        <h2>Pronto para transformar seu RH?</h2>
-        <p>Comece grátis hoje. Sem cartão de crédito, sem compromisso. Junte-se a milhares de empresas e profissionais que já confiam na NEXURA.</p>
-        <div class="hero-cta">
-          <button class="btn btn-orange btn-lg" data-modal="signup">Criar conta gratuita</button>
-          <button class="btn btn-ghost btn-lg" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)" data-modal="login">Falar com especialista</button>
+          <div class="profile-card logout-card reveal in">
+            <div>
+              <h3 style="margin-bottom:2px">Encerrar sessão</h3>
+              <p>Você será desconectado deste dispositivo.</p>
+            </div>
+            <button class="btn btn-dark" id="logoutBtn2">Sair</button>
+          </div>
         </div>
       </div>
     </div>
@@ -780,17 +719,12 @@ html[data-theme="dark"] .loader{
     <div class="footer-grid">
       <div>
         <img src="railoR.png" alt="Logo RAILO" width="32" height="32" class="logo-mark" >
-      <span style="var(--ink)">RAIL<span style="color:var(--orange)">O</span></span></a>
+      <span style="var(--ink)">RAIL<span style="color:var(--orange)">O</span></span>
         <p>O HR-Tech Marketplace que conecta empresas e profissionais de RH com segurança, transparência e performance.</p>
-        <div class="socials" style="margin-top:18px">
-          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 002.5 6a2.5 2.5 0 005 0 2.5 2.5 0 00-2.52-2.5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
-          <a href="#" aria-label="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l7-9L2 3h6l4 5z"/></svg></a>
-        </div>
       </div>
-      <div><h5>Plataforma</h5><ul><li><a href="#how">Como Funciona</a></li><li><a href="#marketplace">Marketplace</a></li><li><a href="#diff">Diferenciais</a></li><li><a href="#plans">Planos</a></li></ul></div>
-      <div><h5>Empresa</h5><ul><li><a href="#">Sobre nós</a></li><li><a href="#">Carreiras</a></li><li><a href="#">Blog</a></li><li><a href="#contact">Contato</a></li></ul></div>
-      <div><h5>Legal</h5><ul><li><a href="#">Termos de uso</a></li><li><a href="#">Privacidade</a></li><li><a href="#">LGPD</a></li><li><a href="#">Segurança</a></li></ul></div>
+      <div><h5>Plataforma</h5><ul><li><a href="index.html#how">Como Funciona</a></li><li><a href="index.html#marketplace">Marketplace</a></li><li><a href="index.html#diff">Diferenciais</a></li><li><a href="index.html#plans">Planos</a></li></ul></div>
+      <div><h5>Empresa</h5><ul><li><a href="#">Sobre nós</a></li><li><a href="#">Carreiras</a></li><li><a href="#">Blog</a></li></ul></div>
+      <div><h5>Legal</h5><ul><li><a href="#">Termos de uso</a></li><li><a href="#">Privacidade</a></li><li><a href="#">LGPD</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 RAILO. Todos os direitos reservados.</span>
@@ -799,7 +733,7 @@ html[data-theme="dark"] .loader{
   </div>
 </footer>
 
-<!-- Modal -->
+<!-- Modal (login/cadastro, reaproveitado para visitantes deslogados) -->
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal-bd" data-close-modal></div>
   <div class="modal-box">
@@ -850,7 +784,6 @@ html[data-theme="dark"] .loader{
       <div class="field"><label for="mf-login-email">E-mail</label><input id="mf-login-email" type="email" required placeholder="voce@empresa.com" /></div>
       <div class="field"><label for="mf-login-password">Senha</label><input id="mf-login-password" type="password" required placeholder="Digite sua senha" /></div>
       <button type="submit"  class="btn btn-primary btn-block btn-lg">Entrar</button>
-      <p style="text-align:center;margin:16px 0 0;font-size:13.5px">Ainda não tem conta? <a href="#" data-modal="signup" style="color:var(--blue);font-weight:700">Cadastre-se</a></p>
     </form>
     </div>
 </div>
@@ -860,7 +793,7 @@ html[data-theme="dark"] .loader{
 
 <script>
 /* =========================================================
-   NEXURA — JavaScript (vanilla)
+   RAILO — perfil.html JavaScript
    ========================================================= */
 (function(){
   'use strict';
@@ -881,16 +814,11 @@ html[data-theme="dark"] .loader{
       setTheme(current === 'dark' ? 'light' : 'dark');
     });
   });
-  if(window.matchMedia){
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
-      setTheme(e.matches ? 'dark' : 'light');
-    });
-  }
 
   /* ---------- Loader ---------- */
   window.addEventListener('load', function(){
     var loader = document.getElementById('loader');
-    if(loader) setTimeout(function(){ loader.classList.add('hide'); }, 350);
+    if(loader) setTimeout(function(){ loader.classList.add('hide'); }, 300);
   });
 
   /* ---------- Header scroll ---------- */
@@ -909,20 +837,30 @@ html[data-theme="dark"] .loader{
   drawer.querySelectorAll('[data-close-drawer]').forEach(function(el){ el.addEventListener('click', closeDrawer); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeDrawer(); closeModal(); } });
 
+  /* ---------- Toast ---------- */
+  function toast(msg){
+    var wrap = document.getElementById('toastWrap');
+    var t = document.createElement('div');
+    t.className='toast';
+    t.innerHTML='<span class="ti">✓</span><span>'+msg+'</span>';
+    wrap.appendChild(t);
+    requestAnimationFrame(function(){ t.classList.add('show'); });
+    setTimeout(function(){ t.classList.remove('show'); setTimeout(function(){ t.remove(); }, 400); }, 3400);
+  }
+
   /* ---------- Auth Storage (RAILO) ---------- */
   var LS_USERS = 'railo_users';
   var LS_SESSION = 'railo_session';
-
   function getUsers(){ try{ return JSON.parse(localStorage.getItem(LS_USERS)) || []; }catch(e){ return []; } }
   function saveUsers(list){ localStorage.setItem(LS_USERS, JSON.stringify(list)); }
   function setSession(userId){ localStorage.setItem(LS_SESSION, JSON.stringify({ id:userId })); }
   function clearSession(){ localStorage.removeItem(LS_SESSION); }
   function getSession(){ try{ return JSON.parse(localStorage.getItem(LS_SESSION)); }catch(e){ return null; } }
+  function findUserById(id){ return getUsers().find(function(u){ return u.id === id; }); }
   function findUserByEmail(email){
     email = (email||'').trim().toLowerCase();
     return getUsers().find(function(u){ return u.email.toLowerCase() === email; });
   }
-  function findUserById(id){ return getUsers().find(function(u){ return u.id === id; }); }
   function currentUser(){
     var s = getSession();
     if(!s) return null;
@@ -934,24 +872,26 @@ html[data-theme="dark"] .loader{
     return 'h'+h;
   }
   function uid(){ return 'u_' + Date.now() + '_' + Math.random().toString(36).slice(2,9); }
-  window.railoAuth = { getUsers:getUsers, saveUsers:saveUsers, setSession:setSession, clearSession:clearSession, getSession:getSession, findUserById:findUserById, currentUser:currentUser, simpleHash:simpleHash };
+  function updateUser(id, patch){
+    var users = getUsers();
+    var idx = users.findIndex(function(u){ return u.id === id; });
+    if(idx === -1) return null;
+    users[idx] = Object.assign({}, users[idx], patch);
+    saveUsers(users);
+    return users[idx];
+  }
 
   function refreshHeaderAuthUI(){
     var user = currentUser();
     document.querySelectorAll('.auth-guest-actions').forEach(function(el){ el.style.display = user ? 'none' : ''; });
     var desktopAvatar = document.getElementById('userAvatarLink');
-    if(desktopAvatar){
-      desktopAvatar.classList.toggle('show', !!user);
-      if(user){
-        desktopAvatar.innerHTML = user.foto ? '<img src="'+user.foto+'" alt="Foto de perfil">' : (user.nome||user.email||'U').trim().charAt(0).toUpperCase();
-      }
+    if(desktopAvatar && user){
+      desktopAvatar.classList.add('show');
+      desktopAvatar.innerHTML = user.foto ? '<img src="'+user.foto+'" alt="Foto de perfil">' : (user.nome||user.email||'U').trim().charAt(0).toUpperCase();
     }
-    var mobileAvatar = document.getElementById('userAvatarLinkMobile');
-    if(mobileAvatar){ mobileAvatar.style.display = user ? 'flex' : 'none'; }
   }
-  refreshHeaderAuthUI();
 
-  /* ---------- Modal ---------- */
+  /* ---------- Modal (login/cadastro para visitantes) ---------- */
   var modal = document.getElementById('modal');
   var modalTitle = document.getElementById('modalTitle');
   var modalDesc = document.getElementById('modalDesc');
@@ -969,12 +909,10 @@ html[data-theme="dark"] .loader{
     var rhInputs = ['mf-spec','mf-senioridade','mf-anos'];
     if(role === 'rh'){
       rhFields.style.display = '';
-      nameLabel.textContent = 'Nome Completo';
       emailLabel.textContent = 'E-mail Profissional';
       rhInputs.forEach(function(id){ document.getElementById(id).required = true; });
     } else {
       rhFields.style.display = 'none';
-      nameLabel.textContent = 'Nome Completo';
       emailLabel.textContent = 'E-mail da Empresa';
       rhInputs.forEach(function(id){ document.getElementById(id).required = false; });
     }
@@ -991,7 +929,6 @@ html[data-theme="dark"] .loader{
       roleSwitch.style.display = 'none';
       formSignup.style.display = 'none';
       formLogin.style.display = '';
-      if(opts.email){ document.getElementById('mf-login-email').value = opts.email; }
     } else {
       modalTitle.textContent = 'Crie sua conta na RAILO';
       modalDesc.textContent = 'Escolha o tipo de conta e comece em menos de 2 minutos.';
@@ -999,16 +936,13 @@ html[data-theme="dark"] .loader{
       formLogin.style.display = 'none';
       formSignup.style.display = '';
       setRole(opts.role === 'profissional' || opts.role === 'rh' ? 'rh' : 'empresa');
-      if(opts.email){ document.getElementById('mf-email').value = opts.email; }
     }
   }
   function closeModal(){ modal.classList.remove('open'); document.body.style.overflow=''; }
-  window.railoOpenModal = openModal;
 
   document.querySelectorAll('[data-modal]').forEach(function(btn){
     btn.addEventListener('click', function(e){
       e.preventDefault();
-      if(currentUser()){ window.location.href = 'perfil.html'; return; }
       openModal(btn.getAttribute('data-modal'), { role: btn.getAttribute('data-role') });
     });
   });
@@ -1023,22 +957,11 @@ html[data-theme="dark"] .loader{
     var email = document.getElementById('mf-email').value.trim();
     var pass = document.getElementById('mf-password').value;
     var confirm = document.getElementById('mf-confirm-password').value;
-
     if(!nome || !email || !pass){ toast('Preencha todos os campos obrigatórios.'); return; }
     if(pass.length < 6){ toast('A senha deve ter pelo menos 6 caracteres.'); return; }
     if(pass !== confirm){ toast('As senhas não coincidem.'); return; }
-    if(findUserByEmail(email)){ toast('Este e-mail já está cadastrado. Faça login.'); openModal('login', { email:email }); return; }
-
-    var user = {
-      id: uid(),
-      role: currentRole,
-      nome: nome,
-      email: email,
-      passwordHash: simpleHash(pass),
-      createdAt: Date.now(),
-      bio: '',
-      foto: ''
-    };
+    if(findUserByEmail(email)){ toast('Este e-mail já está cadastrado. Faça login.'); openModal('login'); return; }
+    var user = { id: uid(), role: currentRole, nome: nome, email: email, passwordHash: simpleHash(pass), createdAt: Date.now(), bio:'', foto:'' };
     if(currentRole === 'rh'){
       var specSel = document.getElementById('mf-spec');
       user.especialidade = specSel.value;
@@ -1050,12 +973,10 @@ html[data-theme="dark"] .loader{
       user.rating = 5.0;
       user.respTempo = '1h';
     }
-    var users = getUsers();
-    users.push(user);
-    saveUsers(users);
+    var users = getUsers(); users.push(user); saveUsers(users);
     setSession(user.id);
-    toast('Conta criada com sucesso! Redirecionando ao seu perfil...');
-    setTimeout(function(){ window.location.href = 'perfil.html'; }, 700);
+    toast('Conta criada com sucesso!');
+    setTimeout(function(){ window.location.reload(); }, 600);
   });
 
   formLogin.addEventListener('submit', function(e){
@@ -1063,216 +984,192 @@ html[data-theme="dark"] .loader{
     var email = document.getElementById('mf-login-email').value.trim();
     var pass = document.getElementById('mf-login-password').value;
     var user = findUserByEmail(email);
-    if(!user){
-      toast('Não encontramos essa conta. Vamos criar uma agora!');
-      openModal('signup', { email:email });
-      return;
-    }
+    if(!user){ toast('Não encontramos essa conta. Vamos criar uma agora!'); openModal('signup'); return; }
     if(user.passwordHash !== simpleHash(pass)){ toast('Senha incorreta. Tente novamente.'); return; }
     setSession(user.id);
-    toast('Login realizado com sucesso! Redirecionando...');
-    setTimeout(function(){ window.location.href = 'perfil.html'; }, 500);
+    toast('Login realizado com sucesso!');
+    setTimeout(function(){ window.location.reload(); }, 500);
   });
-
-  /* ---------- Toast ---------- */
-  function toast(msg){
-    var wrap = document.getElementById('toastWrap');
-    var t = document.createElement('div');
-    t.className='toast';
-    t.innerHTML='<span class=\"ti\">✓</span><span>'+msg+'</span>';
-    wrap.appendChild(t);
-    requestAnimationFrame(function(){ t.classList.add('show'); });
-    setTimeout(function(){ t.classList.remove('show'); setTimeout(function(){ t.remove(); }, 400); }, 3200);
-  }
-  window.nexuraToast = toast;
 
   /* ---------- Reveal on scroll ---------- */
-  var reveals = document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, {threshold:0.12});
-    reveals.forEach(function(el){ io.observe(el); });
-  } else {
-    reveals.forEach(function(el){ el.classList.add('in'); });
-  }
+  document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
 
-  /* ---------- Animated counters ---------- */
-  function animateCount(el){
-    var target = parseInt(el.getAttribute('data-count'),10) || 0;
-    var dur = 1600, start = null;
-    var suffix = el.querySelector('.suf') ? el.querySelector('.suf').outerHTML : '';
-    function step(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts-start)/dur, 1);
-      var eased = 1 - Math.pow(1-p, 3);
-      var val = Math.floor(eased * target);
-      el.innerHTML = val.toLocaleString('pt-BR') + suffix;
-      if(p<1) requestAnimationFrame(step);
-      else el.innerHTML = target.toLocaleString('pt-BR') + suffix;
-    }
-    requestAnimationFrame(step);
-  }
-  var counters = document.querySelectorAll('[data-count]');
-  if('IntersectionObserver' in window){
-    var cio = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if(en.isIntersecting){ animateCount(en.target); cio.unobserve(en.target); } });
-    }, {threshold:0.5});
-    counters.forEach(function(el){ cio.observe(el); });
-  } else { counters.forEach(animateCount); }
+  /* =========================================================
+     Página de Perfil — lógica principal
+     ========================================================= */
+  var user = currentUser();
 
-  /* ---------- How it works tabs ---------- */
-  var tabs = document.querySelectorAll('.tab');
-  tabs.forEach(function(tab){
-    tab.addEventListener('click', function(){
-      tabs.forEach(function(t){ t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-      tab.classList.add('active'); tab.setAttribute('aria-selected','true');
-      var id = 'flow-' + tab.getAttribute('data-tab');
-      document.querySelectorAll('.flow-panel').forEach(function(p){ p.classList.remove('active'); });
-      var panel = document.getElementById(id);
-      panel.classList.add('active');
-      panel.querySelectorAll('.step').forEach(function(s, i){
-        s.classList.remove('in'); setTimeout(function(){ s.classList.add('in'); }, 80*i);
-      });
-    });
-  });
-
-  /* ---------- FAQ accordion ---------- */
-  var faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(function(item){
-    var btn = item.querySelector('.faq-q');
-    var ans = item.querySelector('.faq-a');
-    btn.addEventListener('click', function(){
-      var isOpen = item.classList.contains('open');
-      faqItems.forEach(function(o){ o.classList.remove('open'); o.querySelector('.faq-q').setAttribute('aria-expanded','false'); o.querySelector('.faq-a').style.maxHeight=null; });
-      if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
-    });
-  });
-
-  /* ---------- Marketplace: Profissionais de RH cadastrados ---------- */
-  var grid = document.getElementById('proGrid');
-  var currentFilter = 'all';
-
-  function escapeHtml(str){
-    return String(str||'').replace(/[&<>"']/g, function(c){
-      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
-    });
-  }
-  function initialsOf(name){
-    var parts = (name||'').trim().split(/\s+/);
-    if(!parts[0]) return 'RH';
-    return (parts[0][0] + (parts[1] ? parts[1][0] : '')).toUpperCase();
-  }
-  function badgeLabel(b){
-    if(b==='verified') return '<span class="badge verified">✓ Verificado</span>';
-    if(b==='top') return '<span class="badge top">★ Top rated</span>';
-    if(b==='fast') return '<span class="badge fast">⚡ Resposta rápida</span>';
-    if(b==='new') return '<span class="badge pro-new-badge">✦ Novo no RAILO</span>';
-    return '';
-  }
-  function getRhProfessionals(){
-    return getUsers().filter(function(u){ return u.role === 'rh'; }).map(function(u){
-      var badges = ['verified'];
-      if(Date.now() - (u.createdAt||0) < 1000*60*60*24*7) badges.push('new');
-      if(u.rating >= 4.9) badges.push('top');
-      return {
-        id: u.id,
-        name: u.nome,
-        spec: u.especialidadeLabel || u.especialidade || 'RH Generalista',
-        cat: u.especialidade || 'estrategico',
-        sen: u.senioridade || 'Pleno',
-        rating: u.rating || 5.0,
-        resp: u.respTempo || '1h',
-        price: u.precoHora || 0,
-        avail: u.disponivel !== false,
-        foto: u.foto || '',
-        initials: initialsOf(u.nome),
-        badges: badges
-      };
-    }).sort(function(a,b){ return b.rating - a.rating; });
-  }
-
-  function renderSkeleton(){
-    grid.innerHTML = '';
-    for(var i=0;i<3;i++){
-      var sk = document.createElement('div');
-      sk.className='pro-card';
-      sk.innerHTML = '<div class="pro-top"><div class="skeleton" style="width:56px;height:56px;border-radius:16px"></div><div style="flex:1"><div class="skeleton" style="height:14px;width:60%;margin-bottom:8px"></div><div class="skeleton" style="height:12px;width:40%"></div></div></div><div class="skeleton" style="height:48px;margin-bottom:14px"></div><div class="skeleton" style="height:24px;width:50%"></div>';
-      grid.appendChild(sk);
-    }
-  }
-
-  function renderEmptyState(){
-    grid.innerHTML =
-      '<div class="market-empty">'+
-        '<div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM6 20a6 6 0 0112 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>'+
-        '<h4>Ainda não há profissionais cadastrados</h4>'+
-        '<p>Seja o primeiro Profissional de RH a se cadastrar na RAILO e apareça aqui, em destaque, para empresas que buscam talento agora.</p>'+
-        '<div style="margin-top:20px"><button class="btn btn-primary" data-modal="signup" data-role="rh">Cadastrar como Profissional de RH</button></div>'+
+  if(!user){
+    // Visitante sem sessão: mantém o header pronto para login/cadastro
+    // e sinaliza a intenção de acessar o perfil.
+    refreshHeaderAuthUI();
+    document.querySelector('.profile-hero').innerHTML =
+      '<div class="container" style="text-align:center;padding:40px 0">' +
+        '<h1 style="font-size:28px;font-weight:800;margin-bottom:10px">Você precisa entrar para ver seu perfil</h1>' +
+        '<p style="color:var(--gray-600);margin-bottom:24px">Faça login ou crie sua conta gratuita na RAILO para continuar.</p>' +
+        '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">' +
+          '<button class="btn btn-primary btn-lg" data-modal="signup">Criar conta</button>' +
+          '<button class="btn btn-ghost btn-lg" data-modal="login">Já tenho conta</button>' +
+        '</div>' +
       '</div>';
-    grid.querySelectorAll('[data-modal]').forEach(function(btn){
-      btn.addEventListener('click', function(e){
-        e.preventDefault();
-        if(currentUser()){ window.location.href = 'perfil.html'; return; }
-        openModal(btn.getAttribute('data-modal'), { role: btn.getAttribute('data-role') });
-      });
+    document.querySelectorAll('.profile-hero [data-modal]').forEach(function(btn){
+      btn.addEventListener('click', function(){ openModal(btn.getAttribute('data-modal'), { role: btn.getAttribute('data-role') }); });
     });
+    document.querySelector('.profile-grid') && (document.querySelector('.profile-grid').style.display = 'none');
+    return;
   }
 
-  function renderPros(filter){
-    var professionals = getRhProfessionals();
-    var list = professionals.filter(function(p){ return filter==='all' || p.cat===filter; });
-    grid.innerHTML = '';
-    if(!professionals.length){ renderEmptyState(); return; }
-    if(!list.length){ grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--gray-600)">Nenhum profissional encontrado neste filtro.</p>'; return; }
-    list.forEach(function(p){
-      var card = document.createElement('article');
-      card.className='pro-card';
-      var photoHtml = p.foto ? '<img src="'+p.foto+'" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:16px">' : escapeHtml(p.initials);
-      card.innerHTML =
-        '<div class="pro-top">'+
-          '<div class="pro-photo">'+photoHtml+'</div>'+
-          '<div>'+
-            '<div class="pro-name">'+escapeHtml(p.name)+'</div>'+
-            '<div class="pro-spec">'+escapeHtml(p.spec)+'</div>'+
-            '<span class="pro-sen">'+escapeHtml(p.sen)+'</span>'+
-          '</div>'+
-        '</div>'+
-        '<div class="pro-badges">'+p.badges.map(badgeLabel).join('')+'</div>'+
-        '<div class="pro-meta"><span>Nota <b>'+p.rating.toFixed(1)+'</b></span><span>Resposta <b>'+escapeHtml(p.resp)+'</b></span></div>'+
-        '<div class="pro-price">R$ '+p.price+'<small>/hora</small></div>'+
-        '<div class="pro-avail"><span class="dot-live" style="'+(p.avail?'':'background:#94A3B8;box-shadow:none')+'"></span>'+(p.avail?'Disponível agora':'Indisponível')+'</div>'+
-        '<div class="pro-actions"><button class="btn btn-primary" data-hire="'+escapeHtml(p.name)+'">Contratar</button><button class="btn btn-ghost" data-profile="'+p.id+'">Ver perfil</button></div>';
-      grid.appendChild(card);
-    });
-    grid.querySelectorAll('[data-hire]').forEach(function(b){ b.addEventListener('click', function(){
-      if(!currentUser()){ toast('Crie sua conta para contratar profissionais.'); openModal('signup',{role:'empresa'}); return; }
-      toast('Convite enviado para '+b.getAttribute('data-hire')+'.');
-    }); });
-    grid.querySelectorAll('[data-profile]').forEach(function(b){ b.addEventListener('click', function(){ toast('Em breve: visualização pública de perfil.'); }); });
+  refreshHeaderAuthUI();
+
+  var avatarImg = document.getElementById('avatarImg');
+  var avatarInput = document.getElementById('avatarInput');
+  var profileName = document.getElementById('profileName');
+  var profileRolePill = document.getElementById('profileRolePill');
+  var profileEmail = document.getElementById('profileEmail');
+  var pfRhFields = document.getElementById('pfRhFields');
+
+  function renderProfileHeader(u){
+    profileName.textContent = u.nome || 'Usuário RAILO';
+    profileEmail.textContent = u.email;
+    if(u.role === 'rh'){
+      profileRolePill.textContent = 'Profissional de RH · ' + (u.senioridade || 'Pleno');
+      profileRolePill.classList.add('rh');
+    } else {
+      profileRolePill.textContent = 'Empresa Contratante';
+      profileRolePill.classList.remove('rh');
+    }
+    avatarImg.innerHTML = u.foto ? '<img src="'+u.foto+'" alt="Sua foto de perfil">' : (u.nome||u.email||'U').trim().charAt(0).toUpperCase();
   }
 
-  document.querySelectorAll('.chip').forEach(function(chip){
-    chip.addEventListener('click', function(){
-      document.querySelectorAll('.chip').forEach(function(c){ c.classList.remove('active'); });
-      chip.classList.add('active');
-      currentFilter = chip.getAttribute('data-filter');
-      renderSkeleton();
-      setTimeout(function(){ renderPros(currentFilter); }, 450);
+  function fillForm(u){
+    document.getElementById('pf-nome').value = u.nome || '';
+    document.getElementById('pf-email').value = u.email || '';
+    document.getElementById('pf-bio').value = u.bio || '';
+    if(u.role === 'rh'){
+      pfRhFields.style.display = '';
+      document.getElementById('pf-spec').value = u.especialidade || 'recrutamento';
+      document.getElementById('pf-senioridade').value = u.senioridade || 'Pleno';
+      document.getElementById('pf-anos').value = u.anos || 0;
+      document.getElementById('pf-preco').value = u.precoHora || 0;
+      document.getElementById('pf-disponivel').checked = u.disponivel !== false;
+    } else {
+      pfRhFields.style.display = 'none';
+    }
+  }
+
+  renderProfileHeader(user);
+  fillForm(user);
+
+  /* ---------- Upload de foto (com redimensionamento) ---------- */
+  avatarInput.addEventListener('change', function(){
+    var file = avatarInput.files && avatarInput.files[0];
+    if(!file) return;
+    if(!file.type.startsWith('image/')){ toast('Selecione um arquivo de imagem válido.'); return; }
+    var reader = new FileReader();
+    reader.onload = function(ev){
+      var img = new Image();
+      img.onload = function(){
+        var size = 240;
+        var canvas = document.createElement('canvas');
+        canvas.width = size; canvas.height = size;
+        var ctx = canvas.getContext('2d');
+        var scale = Math.max(size/img.width, size/img.height);
+        var w = img.width*scale, h = img.height*scale;
+        ctx.drawImage(img, (size-w)/2, (size-h)/2, w, h);
+        var dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+        user = updateUser(user.id, { foto: dataUrl });
+        renderProfileHeader(user);
+        refreshHeaderAuthUI();
+        toast('Foto de perfil atualizada!');
+      };
+      img.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  /* ---------- Salvar informações do perfil ---------- */
+  document.getElementById('profileForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nome = document.getElementById('pf-nome').value.trim();
+    if(!nome){ toast('O nome não pode ficar vazio.'); return; }
+    var patch = { nome: nome, bio: document.getElementById('pf-bio').value.trim() };
+    if(user.role === 'rh'){
+      var specSel = document.getElementById('pf-spec');
+      patch.especialidade = specSel.value;
+      patch.especialidadeLabel = specSel.options[specSel.selectedIndex].textContent;
+      patch.senioridade = document.getElementById('pf-senioridade').value;
+      patch.anos = parseInt(document.getElementById('pf-anos').value, 10) || 0;
+      patch.precoHora = parseInt(document.getElementById('pf-preco').value, 10) || 0;
+      patch.disponivel = document.getElementById('pf-disponivel').checked;
+    }
+    user = updateUser(user.id, patch);
+    renderProfileHeader(user);
+    refreshHeaderAuthUI();
+    toast('Perfil atualizado com sucesso!');
+  });
+
+  /* ---------- Alteração de senha com verificação por e-mail (simulada) ---------- */
+  var securityIdle = document.getElementById('securityIdle');
+  var securityVerify = document.getElementById('securityVerify');
+  var pendingCode = null;
+  var pendingExpiry = 0;
+
+  document.getElementById('startVerifyBtn').addEventListener('click', function(){
+    pendingCode = String(Math.floor(100000 + Math.random()*900000));
+    pendingExpiry = Date.now() + 5*60*1000;
+    document.getElementById('verifyEmailLabel').textContent = user.email;
+    document.getElementById('demoCodeNote').textContent =
+      'Ambiente de demonstração: como não há um servidor de e-mail real conectado, seu código de verificação é ' + pendingCode + ' (válido por 5 minutos).';
+    securityIdle.style.display = 'none';
+    securityVerify.style.display = '';
+    var boxes = document.querySelectorAll('#codeBoxes input');
+    boxes.forEach(function(b){ b.value=''; });
+    boxes[0].focus();
+  });
+
+  var codeBoxes = document.querySelectorAll('#codeBoxes input');
+  codeBoxes.forEach(function(box, i){
+    box.addEventListener('input', function(){
+      box.value = box.value.replace(/[^0-9]/g,'').slice(0,1);
+      if(box.value && codeBoxes[i+1]) codeBoxes[i+1].focus();
+    });
+    box.addEventListener('keydown', function(e){
+      if(e.key === 'Backspace' && !box.value && codeBoxes[i-1]) codeBoxes[i-1].focus();
     });
   });
 
-  // Initial render with skeleton for perceived performance
-  renderSkeleton();
-  setTimeout(function(){ renderPros('all'); }, 600);
-
-  /* ---------- Smooth anchor focus for a11y ---------- */
-  document.querySelectorAll('a[href^="#\"]').forEach(function(a){
-    a.addEventListener('click', function(){
-      var id = a.getAttribute('href');
-      if(id.length>1){ var el = document.querySelector(id); if(el){ setTimeout(function(){ el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); }, 400); } }
-    });
+  document.getElementById('cancelVerifyBtn').addEventListener('click', function(){
+    securityVerify.style.display = 'none';
+    securityIdle.style.display = '';
+    pendingCode = null;
   });
+
+  document.getElementById('confirmChangePassBtn').addEventListener('click', function(){
+    var entered = Array.prototype.map.call(codeBoxes, function(b){ return b.value; }).join('');
+    if(entered.length < 6){ toast('Digite o código de verificação completo.'); return; }
+    if(Date.now() > pendingExpiry){ toast('Código expirado. Solicite um novo.'); return; }
+    if(entered !== pendingCode){ toast('Código incorreto. Verifique e tente novamente.'); return; }
+    var newPass = document.getElementById('pf-newpass').value;
+    var newPass2 = document.getElementById('pf-newpass2').value;
+    if(newPass.length < 6){ toast('A nova senha deve ter pelo menos 6 caracteres.'); return; }
+    if(newPass !== newPass2){ toast('As senhas não coincidem.'); return; }
+    user = updateUser(user.id, { passwordHash: simpleHash(newPass) });
+    pendingCode = null;
+    securityVerify.style.display = 'none';
+    securityIdle.style.display = '';
+    document.getElementById('pf-newpass').value = '';
+    document.getElementById('pf-newpass2').value = '';
+    toast('Senha alterada com sucesso!');
+  });
+
+  /* ---------- Logout ---------- */
+  function doLogout(){
+    clearSession();
+    toast('Sessão encerrada.');
+    setTimeout(function(){ window.location.href = 'index.html'; }, 400);
+  }
+  document.getElementById('logoutBtn').addEventListener('click', doLogout);
+  document.getElementById('logoutBtn2').addEventListener('click', doLogout);
 
 })();
 </script>
